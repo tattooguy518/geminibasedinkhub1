@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Icy Blue PWA</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">APP LOGO</div>
+        <button class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+
+    <nav id="side-menu" class="side-menu">
+        <a href="#" onclick="showPage('home')">Home</a>
+        <a href="#" onclick="showPage('booking')">Booking</a>
+        <a href="#" onclick="showPage('inspo')">Inspo</a>
+        <a href="#" onclick="showPage('social')">Social</a>
+        <a href="#" onclick="showPage('finance')">Finance</a>
+    </nav>
+
+    <main id="app-container">
+        <section id="home" class="page active">
+            <h1>Welcome Back</h1>
+            <div class="card">
+                <h3>Daily Overview</h3>
+                <p>Here is your summary for today.</p>
+            </div>
+            <div class="card">
+                <h3>Recent Activity</h3>
+                <p>You have 3 new notifications.</p>
+            </div>
+        </section>
+
+        <section id="booking" class="page">
+            <h1>Booking System</h1>
+            <div class="tab-nav">
+                <button class="tab-btn active" onclick="switchTab('booking', 'book-main')">Booking</button>
+                <button class="tab-btn" onclick="switchTab('booking', 'book-clients')">Clients</button>
+            </div>
+            <div id="book-main" class="tab-content active">
+                <div class="card">
+                    <h3>New Appointment</h3>
+                    <button class="action-btn">Book Now</button>
+                </div>
+            </div>
+            <div id="book-clients" class="tab-content">
+                <div class="card">
+                    <h3>Client List</h3>
+                    <p>Client A - 2:00 PM</p>
+                    <p>Client B - 4:00 PM</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="inspo" class="page">
+            <h1>Inspiration</h1>
+            <div class="card">
+                <h3>Mood Board</h3>
+                <div class="placeholder-img">Image Placeholder</div>
+            </div>
+        </section>
+
+        <section id="social" class="page">
+            <h1>Social Media</h1>
+            <div class="card">
+                <h3>Feed</h3>
+                <p>Latest updates go here.</p>
+            </div>
+        </section>
+
+        <section id="finance" class="page">
+            <h1>Finance</h1>
+            <div class="tab-nav">
+                <button class="tab-btn active" onclick="switchTab('finance', 'fin-income')">Income</button>
+                <button class="tab-btn" onclick="switchTab('finance', 'fin-expense')">Expense</button>
+            </div>
+            <div id="fin-income" class="tab-content active">
+                <div class="card">
+                    <h3>Total Income</h3>
+                    <p class="money">+$5,240.00</p>
+                </div>
+            </div>
+            <div id="fin-expense" class="tab-content">
+                <div class="card">
+                    <h3>Total Expenses</h3>
+                    <p class="money">-$1,100.00</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
